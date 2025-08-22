@@ -60,7 +60,7 @@ export default function Home() {
                   The future of payments.
                 </motion.h2>
                 <motion.p className="text-lg sm:text-xl text-zinc-400 max-w-3xl mx-auto mb-12" variants={fadeUp}>
-                  World's first universal cross-platform proximity payment system.
+                  World&apos;s first universal cross-platform proximity payment system.
                 </motion.p>
                 <motion.div className="flex items-center justify-center gap-6" variants={fadeUp}>
                   <MagneticButton
@@ -332,7 +332,7 @@ export default function Home() {
           <footer id="download" className="border-t border-zinc-800 bg-zinc-900">
             <div className="max-w-6xl mx-auto px-6 py-16 text-center">
               <p className="text-zinc-400 text-sm">
-                © {new Date().getFullYear()} Aeria. World's First Universal Cross-Platform Proximity Payment System.
+                © {new Date().getFullYear()} Aeria. World&apos;s First Universal Cross-Platform Proximity Payment System.
               </p>
             </div>
       </footer>
