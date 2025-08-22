@@ -26,15 +26,67 @@ export default function Nav() {
 					<span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
 				</button>
 			</div>
-			{/* Mobile menu overlay */}
-					{menuOpen && (
-						<div className="sm:hidden fixed inset-0 z-50 bg-black/90 flex flex-col items-center justify-center text-2xl font-semibold text-white transition-all">
-							<a href="#p2p" className="w-full text-center py-3 rounded hover:text-blue-400" onClick={() => setMenuOpen(false)}>P2P</a>
-							<a href="#terminal" className="w-full text-center py-3 rounded hover:text-blue-400" onClick={() => setMenuOpen(false)}>Peer‑to‑Terminal</a>
-							<a href="#privacy" className="w-full text-center py-3 rounded hover:text-blue-400" onClick={() => setMenuOpen(false)}>Privacy</a>
-							<a href="https://testflight.apple.com/join/vAdMtgYp" className="w-full text-center py-3 rounded-full bg-white text-black font-medium hover:opacity-90" target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>Download</a>
+			
+			{/* Mobile menu backdrop */}
+			{menuOpen && (
+				<div 
+					className="sm:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+					onClick={() => setMenuOpen(false)}
+				/>
+			)}
+			
+			{/* Mobile menu slide-in panel */}
+			<div className={`sm:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] z-50 bg-white/80 backdrop-blur-2xl border border-white/30 rounded-l-3xl shadow-2xl transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+				{/* Menu header with close button */}
+				<div className="flex items-center justify-between p-6 border-b border-white/20 bg-white/90 backdrop-blur-sm rounded-tl-3xl">
+					<h2 className="text-xl font-semibold text-black drop-shadow-lg">Menu</h2>
+					<button
+						onClick={() => setMenuOpen(false)}
+						className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/20 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
+						aria-label="Close menu"
+					>
+						<svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+						</svg>
+					</button>
+				</div>
+				
+				{/* Menu items */}
+				<nav className="p-6 space-y-4 bg-white/90 backdrop-blur-sm rounded-bl-3xl">
+					<a 
+						href="#p2p" 
+						className="block text-lg font-bold text-black hover:text-blue-600 transition-all duration-200 py-4 px-6 rounded-2xl hover:bg-white/15 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl transform hover:scale-105"
+						onClick={() => setMenuOpen(false)}
+					>
+						P2P
+					</a>
+					<a 
+						href="#terminal" 
+						className="block text-lg font-bold text-black hover:text-blue-600 transition-all duration-200 py-4 px-6 rounded-2xl hover:bg-white/15 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl transform hover:scale-105"
+						onClick={() => setMenuOpen(false)}
+					>
+						Peer‑to‑Terminal
+					</a>
+					<a 
+						href="#privacy" 
+						className="block text-lg font-bold text-black hover:text-blue-600 transition-all duration-200 py-4 px-6 rounded-2xl hover:bg-white/15 backdrop-blur-sm border border-white/20 hover:border-white/40 shadow-lg hover:shadow-xl transform hover:scale-105"
+						onClick={() => setMenuOpen(false)}
+					>
+						Privacy
+					</a>
+					<a 
+						href="https://testflight.apple.com/join/vAdMtgYp" 
+						className="block mt-8"
+						target="_blank" 
+						rel="noopener noreferrer"
+						onClick={() => setMenuOpen(false)}
+					>
+						<div className="w-full rounded-2xl bg-gradient-to-r from-blue-500/90 to-blue-600/90 backdrop-blur-sm text-white px-6 py-4 font-bold text-center hover:from-blue-400/90 hover:to-blue-500/90 transition-all duration-200 shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 border border-blue-400/30">
+							Download
 						</div>
-					)}
+					</a>
+				</nav>
+			</div>
 		</div>
 	);
 }
