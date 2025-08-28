@@ -36,10 +36,10 @@ export default function Nav() {
 			)}
 			
 			{/* Mobile menu slide-in panel */}
-			<div className={`sm:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] z-50 bg-black border border-white/20 rounded-l-3xl shadow-2xl transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+			<div className={`sm:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] z-50 bg-black border border-white/20 rounded-l-3xl shadow-2xl transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ fontFamily: 'Inter, sans-serif' }}>
 				{/* Menu header with close button */}
 				<div className="flex items-center justify-between p-6 border-b border-white/20 bg-black rounded-tl-3xl">
-					<h2 className="text-xl font-semibold text-white">Menu</h2>
+					<h2 className="text-sm font-medium text-white">Menu</h2>
 					<button
 						onClick={() => setMenuOpen(false)}
 						className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/40"
@@ -52,36 +52,36 @@ export default function Nav() {
 				</div>
 				
 				{/* Menu items */}
-				<nav className="p-6 space-y-4 bg-black rounded-bl-3xl">
+				<nav className="p-6 space-y-3 bg-black rounded-bl-3xl text-white">
 					<a 
 						href="#p2p" 
-						className="block text-lg font-bold text-white transition-all duration-200 py-4 px-6 rounded-2xl hover:bg-white/10 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl"
+						className="block text-sm font-normal text-white transition-colors py-3 px-4 rounded-lg hover:bg-white/10"
 						onClick={() => setMenuOpen(false)}
 					>
 						P2P
 					</a>
 					<a 
 						href="#terminal" 
-						className="block text-lg font-bold text-white transition-all duration-200 py-4 px-6 rounded-2xl hover:bg-white/10 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl"
+						className="block text-sm font-normal text-white transition-colors py-3 px-4 rounded-lg hover:bg-white/10"
 						onClick={() => setMenuOpen(false)}
 					>
 						Peer‑to‑Terminal
 					</a>
 					<a 
 						href="#privacy" 
-						className="block text-lg font-bold text-white transition-all duration-200 py-4 px-6 rounded-2xl hover:bg-white/10 border border-white/20 hover:border-white/30 shadow-lg hover:shadow-xl"
+						className="block text-sm font-normal text-white transition-colors py-3 px-4 rounded-lg hover:bg-white/10"
 						onClick={() => setMenuOpen(false)}
 					>
 						Privacy
 					</a>
 					<a 
 						href="https://testflight.apple.com/join/vAdMtgYp" 
-						className="block mt-8"
+						className="block pt-2"
 						target="_blank" 
 						rel="noopener noreferrer"
 						onClick={() => setMenuOpen(false)}
 					>
-						<div className="w-full rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 font-bold text-center hover:from-blue-400 hover:to-blue-500 transition-all duration-200 shadow-2xl transform hover:scale-105 border border-blue-400/30">
+						<div className="inline-flex items-center justify-center rounded-full bg-white text-black px-4 py-2 text-sm font-medium hover:opacity-90 transition-opacity">
 							Download
 						</div>
 					</a>
