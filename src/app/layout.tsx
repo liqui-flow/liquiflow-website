@@ -7,18 +7,9 @@ export const metadata: Metadata = {
   description: "Proximity P2P and Peer-to-Terminal payments",
   manifest: '/manifest.json',
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.ico', sizes: '16x16' },
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/favicon.ico', sizes: '48x48' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
-    other: [
-      { rel: 'icon', url: '/favicon.ico' },
-      { rel: 'shortcut icon', url: '/favicon.ico' },
-    ],
+    icon: '/favicon.jpeg',
+    shortcut: '/favicon.jpeg',
+    apple: '/favicon.jpeg',
   },
 };
 
